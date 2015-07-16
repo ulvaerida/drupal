@@ -1,0 +1,33 @@
+<?php
+
+function first_help($path,%arg){
+	if ($path=='admin/help#first'){
+		return t('A demonstration module.');
+	}
+}
+
+function first_block_info(){
+	$block=array();
+
+	$blocks['list_modules']=array(
+	'info'=>t('List modul yang tersedia.'),
+	);
+
+	return $blocks;
+}
+
+function first_block_view($block_name=''){
+	if($block_name=='list_modules'){
+		$list=module_list();
+
+		$theme_args=array('item')=>$list,'type'=>'ol');
+		$content = theme('item_list',$theme_args);
+
+		$block=array(
+		'subject'=>t('enable modules'),
+		'content'=> $content,
+		);
+
+		return $block;
+	}
+}
