@@ -1,0 +1,4 @@
+name=mytheme
+description = My new sub-theme(CSS,phptemplate,3-col)
+base theme=corporateclean
+core=7.x
